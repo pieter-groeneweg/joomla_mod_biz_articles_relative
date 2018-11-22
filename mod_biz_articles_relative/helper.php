@@ -40,16 +40,16 @@ abstract class ModBizArticlesRelativeHelper
 		$daysBeforeCreation = new JDate('now +'.$params->get('start_date_range', '1').' day');
 		$daysBeforeCreation->setTimezone($timezone);
 		$model->setState('filter.start_date_range', $daysBeforeCreation);
-		//stop after
+		//stop after x days
 		$daysToStayAlive = new JDate($daysBeforeCreation. '+'.$params->get('end_date_range', '2').' day');
 		$model->setState('filter.end_date_range', $daysToStayAlive);
-		//languag
+		//language
 		$model->setState('filter.language', $app->getLanguageFilter());
 		//sort order
 		$model->setState('list.ordering', 'a.created');
 		$model->setState('list.direction', 'DESC');
 
-				//build the list of items
+		//build the list of items
 		$items = $model->getItems();
 		foreach ($items as &$item)
 		{
