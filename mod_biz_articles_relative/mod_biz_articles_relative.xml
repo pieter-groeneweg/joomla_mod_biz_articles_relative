@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3" client="site" method="upgrade">
+		<name>Biz Articles Relative</name>
+		<author>Pieter Groeneweg</author>
+		<creationDate>November 2018</creationDate>
+		<copyright>bizgo.nl</copyright>
+		<license>GNU General Public License</license>
+		<authorEmail>info@bizgo.nl</authorEmail>
+		<authorUrl>https://bizgo.nl</authorUrl>
+		<version>1.0</version>
+		<description>Show Articles Relative to x days before created date and keep alive x day(s) after</description>
+		<files>
+			<filename module="mod_biz_articles_relative">mod_biz_articles_relative.php</filename>
+			<folder>tmpl</folder>
+			<filename>helper.php</filename>
+		</files>
+		<languages>
+		</languages>
+		
+		<config>
+			<fields name="params">
+				<fieldset name="basic">
+					<field
+						name="catid"
+						type="category"
+						label="Categories"
+						description="Select category"
+						extension="com_content"
+						multiple="true"
+						filter="int_array"
+					/>
+					<field
+						name="count"
+						type="number"
+						label="Count"
+						description="Select Article Count"
+						default="5"
+						filter="integer"
+					/>
+					<field
+						name="show_front"
+						type="radio"
+						label="Show featured"
+						description="Show featured"
+						class="btn-group btn-group-yesno"
+						default="1"
+						filter="integer"
+						>
+						<option value="1">JSHOW</option>
+						<option value="0">JHIDE</option>
+					</field>
+					<field
+						name="basicspacer1"
+						type="spacer"
+						hr="true"
+					/>
+					<field
+						name="start_date_range"
+						type="number"
+						label="Show x days before creation date"
+						description="Show x days before creation date"
+						default="1"
+						filter="integer"
+					/>
+					<field
+						name="end_date_range"
+						type="number"
+						label="Stay alive x days after publish in module"
+						description="Stay alive x days after publish in module"
+						default="2"
+						filter="integer"
+					/>
+				</fieldset>
+				<fieldset name="advanced">
+					<field
+						name="layout"
+						type="modulelayout"
+						label="JFIELD_ALT_LAYOUT_LABEL"
+						description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+					/>
+					<field
+						name="moduleclass_sfx"
+						type="textarea"
+						label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+						description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+						rows="3"
+					/>
+					<field
+						name="cache"
+						type="list"
+						label="COM_MODULES_FIELD_CACHING_LABEL"
+						description="COM_MODULES_FIELD_CACHING_DESC"
+						default="1"
+						filter="integer"
+						>
+						<option value="1">JGLOBAL_USE_GLOBAL</option>
+						<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+					</field>
+					<field
+						name="cache_time"
+						type="number"
+						label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+						description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+						default="900"
+						filter="integer"
+					/>
+					<field
+						name="cachemode"
+						type="hidden"
+						default="static"
+						>
+						<option value="static"></option>
+					</field>
+				</fieldset>
+			</fields>
+		</config>
+</extension>
