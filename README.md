@@ -9,7 +9,7 @@ From that point I reversed engineered and rewrote some pieces of that module int
 
 ## How it works
 
-In content article editor write (an) articles and set a creation date when your 'event' is on. Save your article.
+In content article editor write (an) article(s) and set a creation date when your 'event' is on. Save your article.
 
 In the module
 1. select the categories and article count
